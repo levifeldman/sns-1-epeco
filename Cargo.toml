@@ -1,0 +1,24 @@
+[package]
+name = "sns1epeco"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+ic-cdk = "0.6.8"
+ic-cdk-macros = "0.6.8"
+candid = "0.8.4"
+serde = "1.0.148"
+serde_bytes = "0.11.7"
+
+
+[profile.release]
+lto = true
+opt-level = 'z'          
+codegen-units = 1 
+split-debuginfo= "packed"
+strip = "debuginfo"
+debug = false
